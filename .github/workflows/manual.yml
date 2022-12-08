@@ -1,8 +1,8 @@
 name: ci
-'on':
+"on":
   push:
     branches:
-      - '**'
+      - "**"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,8 +12,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: '${{ secrets.DOCKER_USERNAME }}'
-          password: '${{ secrets.DOCKER_PASSWORD }}'
+          username: "${{ secrets.DOCKER_USERNAME }}"
+          password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Build the Docker image udagram-api-feed
@@ -23,14 +23,14 @@ jobs:
       - name: Build the Docker image udagram-frontend
         run: docker build -t udagram-frontend ./udagram-frontend
       - name: Tag the Docker image udagram-api-feed
-        run: docker tag udagram-api-feed ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:v1
+        run: docker tag udagram-api-feed ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:lastest
       - name: Tag the Docker image udagram-api-user
-        run: docker tag udagram-api-user ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:v1
+        run: docker tag udagram-api-user ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:lastest
       - name: Tag the Docker image udagram-frontend
-        run: docker tag udagram-frontend ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:v1
+        run: docker tag udagram-frontend ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:lastest
       - name: Push the Docker image udagram-api-feed
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:v1
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:lastest
       - name: Push the Docker image udagram-api-user
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:v1
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:lastest
       - name: Push the Docker image udagram-frontend
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:v1
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:lastest
