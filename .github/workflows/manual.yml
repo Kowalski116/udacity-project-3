@@ -18,20 +18,20 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./udagram-api-feed/Dockerfile
+          file: udagram-api-feed/Dockerfile
           push: true
           tags: '${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:latest'
       - name: Build and push udagram-api-user
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./udagram-api-user/Dockerfile
+          file: udagram-api-user/Dockerfile
           push: true
           tags: '${{ secrets.DOCKER_USERNAME }}/udagram-api-user:latest'
       - name: Build and push udagram-frontend
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./udagram-frontend/Dockerfile
+          file: udagram-frontend/Dockerfile
           push: true
           tags: '${{ secrets.DOCKER_USERNAME }}/udagram-frontend:latest'
