@@ -19,6 +19,6 @@ jobs:
       - name: Build the Docker image
         run: docker build -t udagram-api-feed ./udagram-api-feed
       - name: Tag the Docker image
-        run: docker tag udagram-api-feed sudkul/udagram-api-feed:v1
+        run: docker tag udagram-api-feed ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:v1
       - name: Push the Docker image
-        run: docker push sudkul/udagram-api-feed:v1
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:v1
