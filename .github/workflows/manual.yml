@@ -29,7 +29,7 @@ jobs:
       - name: Tag the Docker image udagram-api-user
         run: docker tag udagram-api-user ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:lastest
       - name: Tag the Docker image udagram-frontend
-        run: docker tag udagram-frontend ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:lastest
+        run: docker tag udagram-frontend ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:v5
       - name: Tag the Docker image reverseproxy
         run: docker tag reverseproxy ${{ secrets.DOCKER_USERNAME }}/reverseproxy:v1
       - name: Push the Docker image udagram-api-feed
@@ -37,6 +37,6 @@ jobs:
       - name: Push the Docker image udagram-api-user
         run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:lastest
       - name: Push the Docker image udagram-frontend
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:lastest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:v5
       - name: Push the Docker image reverseproxy
         run: docker push ${{ secrets.DOCKER_USERNAME }}/reverseproxy:v1
