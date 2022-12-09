@@ -23,7 +23,7 @@ jobs:
       - name: Build the Docker image udagram-frontend
         run: docker build -t udagram-frontend ./udagram-frontend
       - name: Build the Docker image reverseproxy
-        run: docker build -t reverseproxy ./reverseproxy
+        run: docker build -t reverseproxy ./udagram-reverseproxy
       - name: Tag the Docker image udagram-api-feed
         run: docker tag udagram-api-feed ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:lastest
       - name: Tag the Docker image udagram-api-user
