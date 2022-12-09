@@ -22,21 +22,21 @@ jobs:
         run: docker build -t udagram-api-user ./udagram-api-user
       - name: Build the Docker image udagram-frontend
         run: docker build -t udagram-frontend ./udagram-frontend
-      - name: Build the Docker image udagram-reverseproxy
-        run: docker build -t udagram-reverseproxy ./udagram-reverseproxy
+      - name: Build the Docker image reverseproxy
+        run: docker build -t reverseproxy ./reverseproxy
       - name: Tag the Docker image udagram-api-feed
         run: docker tag udagram-api-feed ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:lastest
       - name: Tag the Docker image udagram-api-user
         run: docker tag udagram-api-user ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:lastest
       - name: Tag the Docker image udagram-frontend
         run: docker tag udagram-frontend ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:lastest
-      - name: Tag the Docker image udagram-reverseproxy
-        run: docker tag udagram-api-user ${{ secrets.DOCKER_USERNAME }}/udagram-reverseproxy:lastest
+      - name: Tag the Docker image reverseproxy
+        run: docker tag udagram-api-user ${{ secrets.DOCKER_USERNAME }}/reverseproxy:lastest
       - name: Push the Docker image udagram-api-feed
         run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-feed:lastest
       - name: Push the Docker image udagram-api-user
         run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-api-user:lastest
       - name: Push the Docker image udagram-frontend
         run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-frontend:lastest
-      - name: Push the Docker image udagram-reverseproxy
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/udagram-reverseproxy:lastest
+      - name: Push the Docker image reverseproxy
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/reverseproxy:lastest
